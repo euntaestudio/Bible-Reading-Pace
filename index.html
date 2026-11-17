@@ -15,10 +15,10 @@
 <title>Bible Reading Pace</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--ls:.2em;--bg:#f2f4f7;--surf:#fff;--ink:#1c2740;--mute:#8a919c;--line:#dde1e8;--acc:#2f5d8a;--acc2:#b5832f;--on:#fff;--track:#e3e7ee;--bur:#7a1f36;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141a26;--surf:#1d2535;--ink:#e6eaf2;--mute:#8e97a8;--line:#2e3849;--acc:#6fa3d8;--acc2:#d9a94f;--on:#10151f;--track:#2a3446;--bur:#b04a63}}
-:root[data-theme="dark"]{--bg:#141a26;--surf:#1d2535;--ink:#e6eaf2;--mute:#8e97a8;--line:#2e3849;--acc:#6fa3d8;--acc2:#d9a94f;--on:#10151f;--track:#2a3446;--bur:#b04a63}
-html{scroll-padding-top:env(safe-area-inset-top,0px);overflow-y:scroll}#vp,#vs,#vq{padding-top:60px}.set{padding:0 20px}.set summary{padding:14px 0;justify-content:space-between;align-items:center;font-weight:400;gap:10px}.set summary span{color:var(--mute);font-size:14px}.set summary b{font-weight:400;margin-left:auto;font-size:15px;margin-right:calc(-1*var(--ls))}.set summary span,.set summary b,.so button{letter-spacing:var(--ls)}.set details{border:0;margin-left:0}.srow+details{border-top:1px solid var(--line)}.set details+details{border-top:1px solid var(--line)}.chv{width:14px;height:14px;color:var(--mute);transition:transform .2s}details[open]>summary .chv{transform:rotate(180deg)}.so{padding:0 0 8px 14px;border-left:2px solid var(--line);margin:0 0 10px 2px}.so button{display:flex;width:100%;justify-content:space-between;align-items:center;border:0;background:none;font:inherit;font-size:15px;color:var(--ink);padding:10px 4px 10px 12px;cursor:pointer;text-align:left}.so button svg{width:18px;height:18px;fill:none;stroke:var(--acc);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;visibility:hidden}.so button[aria-pressed=true]{color:var(--acc);font-weight:500}.so button[aria-pressed=true] svg{visibility:visible}
+:root{--ls:.2em;--bg:#f2f4f7;--surf:#fff;--ink:#1c2740;--mute:#8a919c;--line:#dde1e8;--acc:#2f5d8a;--acc2:#b5832f;--on:#fff;--track:#e3e7ee;--bur:#7a1f36;--selbg:#e6eef7;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141a26;--surf:#1d2535;--ink:#e6eaf2;--mute:#8e97a8;--line:#2e3849;--acc:#6fa3d8;--acc2:#d9a94f;--on:#10151f;--track:#2a3446;--bur:#b04a63;--selbg:#27344a}}
+:root[data-theme="dark"]{--bg:#141a26;--surf:#1d2535;--ink:#e6eaf2;--mute:#8e97a8;--line:#2e3849;--acc:#6fa3d8;--acc2:#d9a94f;--on:#10151f;--track:#2a3446;--bur:#b04a63;--selbg:#27344a}
+html{scroll-padding-top:env(safe-area-inset-top,0px);overflow-y:scroll}#vp,#vs,#vq{padding-top:60px}.set{padding:0 20px}.set summary{padding:14px 0;justify-content:space-between;align-items:center;font-weight:400;gap:10px}.set summary span{color:var(--mute);font-size:14px}.set summary b{font-weight:400;margin-left:auto;font-size:15px;margin-right:calc(-1*var(--ls))}.set summary span,.set summary b,.so button{letter-spacing:var(--ls)}.set details{border:0;margin-left:0}.srow+details{border-top:1px solid var(--line)}.set details+details{border-top:1px solid var(--line)}.chv{width:14px;height:14px;color:var(--mute);transition:transform .2s}details[open]>summary .chv{transform:rotate(180deg)}.so{padding:0 0 8px 14px;border-left:2px solid var(--line);margin:0 0 10px 2px}.so button{display:flex;width:100%;justify-content:space-between;align-items:center;border:0;background:none;font:inherit;font-size:15px;color:var(--ink);padding:10px 4px 10px 12px;cursor:pointer;text-align:left}.so button svg{width:18px;height:18px;fill:none;stroke:var(--acc);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;display:none}.so button[aria-pressed=true]{color:var(--acc);font-weight:500;background:var(--selbg);border-radius:10px}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.6 "Noto Sans KR",system-ui,sans-serif}
 main{max-width:720px;margin:0 auto;padding:0 16px 48px}
@@ -203,8 +203,8 @@ main{padding:20px 16px calc(100px + env(safe-area-inset-bottom,0px))}
 .pop.sheet{place-items:end center;padding:0}.pop.sheet .card{width:min(100%,520px);max-height:92vh;overflow:auto;box-sizing:border-box;padding:20px 20px calc(24px + env(safe-area-inset-bottom,0px));border-radius:24px 24px 0 0;position:relative;text-align:center}
 .ctx{position:absolute;top:14px;right:14px;width:32px;height:32px;border:0;background:none;color:var(--ink);padding:0;cursor:pointer}.ctx svg,.ctcp svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .cti{width:56px;height:56px;border-radius:50%;background:var(--acc);color:var(--on);display:grid;place-items:center;margin:14px auto 12px}.cti svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.ctt{margin:0 0 8px;font-size:20px;font-weight:500}.ctd{margin:0 0 16px;font-size:12px;line-height:19.2px;color:var(--mute)}
-.ctto{display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:left;background:var(--bg);border-radius:14px;padding:12px 14px}.ctto small{display:block;font-size:10px;color:var(--mute)}.ctto b{font-weight:400;font-size:15px;word-break:break-all}.ctcp{border:0;background:none;color:var(--ink);cursor:pointer;padding:4px}
+.ctt{margin:0 0 14px;font-size:20px;font-weight:500}.ctd{margin:0 0 16px;font-size:12px;line-height:19.2px;color:var(--mute);white-space:pre-line}
+.ctto{display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:left;background:var(--bg);border-radius:14px;padding:12px 14px}.ctto small{display:block;margin:0 0 6px;font-size:10px;color:var(--mute)}.ctto b{font-weight:400;font-size:15px;word-break:break-all}.ctcp{border:0;background:none;color:var(--ink);cursor:pointer;padding:4px}
 .cth{margin:18px 0 8px;font-size:10px;font-weight:400;letter-spacing:.08em;color:var(--mute);text-align:left}.ctl{background:var(--bg);border-radius:14px;padding:4px 14px;text-align:left}.ctl div{display:flex;justify-content:space-between;padding:9px 0;font-size:12px}.ctl div span:first-child{color:var(--mute)}
 .ctb{display:block;width:100%;height:46px;border-radius:23px;border:1px solid var(--line);background:var(--surf);color:var(--ink);font:inherit;font-size:15px;cursor:pointer;margin-top:10px}.ctb.pri{background:var(--acc);border-color:var(--acc);color:var(--on);margin-top:18px}.ctb:disabled{opacity:.4;cursor:default}.ctm{margin:10px 0 0;font-size:12px;color:var(--mute);min-height:19px}
 .qnow .stats{padding-top:26px}
@@ -217,7 +217,7 @@ main{padding:20px 16px calc(100px + env(safe-area-inset-bottom,0px))}
 .sum:not(.qnow) .stats{padding-top:29px}.qnow .stats .ttl{margin-top:29px}
 .qnow .stats.l1 .ttl{margin-top:34px}
 body:has(#sw[aria-checked=false]) .sum:not(.qnow) .stats{padding-top:34px}
-.dr .dp2{gap:6.5px;margin-left:.56px}
+.dr .dp2{gap:5.6px;margin-left:.56px}
 #dp .dpy{position:absolute;top:13px;left:20px;margin:0;padding:0}
 #bl .card{display:flex;flex-direction:column;overflow:hidden;max-height:88vh;text-align:left}
 .blt{margin:6px 0 0;font:500 18px/1.5 "Noto Sans KR",system-ui,sans-serif;color:var(--ink)}.bld{margin:4px 0 0;font-size:12px;line-height:1.5;color:var(--mute)}
@@ -230,113 +230,104 @@ body:has(#sw[aria-checked=false]) .sum:not(.qnow) .stats{padding-top:34px}
 .blf{flex:none;display:flex;margin-top:28px}.blf .ctb{margin-top:0;flex:1}.blok{position:absolute;top:12px;right:12px;width:34px;height:34px;border:0;background:none;color:var(--bur);display:grid;place-items:center;padding:0;cursor:pointer}.blok svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
 /* ===== text styles (bible-text-styles v3) ===== */
-#pct{font-size:20px!important;font-weight:700!important;line-height:1!important;--ls:0px;letter-spacing:0px!important}
-.qdd{font-size:35px!important;font-weight:900!important;line-height:1!important;--ls:0px;letter-spacing:0px!important}
+#pct{font-size:20px!important;font-weight:700!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.qdd{font-size:30px!important;font-weight:900!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .sum:not(.qnow) .stats .ttl{font-size:20px!important;font-weight:700!important;line-height:1.5!important;--ls:2px;letter-spacing:2px!important}
 .qnow .ttl.qpas{font-size:20px!important;font-weight:700!important;line-height:1.5!important;--ls:2px;letter-spacing:2px!important}
-.lv1 b.ln{font-size:18px!important;font-weight:700!important;line-height:1.2!important;--ls:2px;letter-spacing:2px!important}
-.mh .mb{font-size:18px!important;font-weight:700!important;line-height:1.2!important;--ls:2px;letter-spacing:2px!important}
-.pth h3{font-size:18px!important;font-weight:700!important;line-height:1.2!important;--ls:2px;letter-spacing:2px!important}
-.ftl{font-size:18px!important;font-weight:700!important;line-height:1.2!important;--ls:2px;letter-spacing:2px!important}
-#ctt{font-size:18px!important;font-weight:700!important;line-height:1.2!important;--ls:2px;letter-spacing:2px!important}
+.lv1 b.ln{font-size:18px!important;font-weight:700!important;line-height:1.5!important;--ls:2px;letter-spacing:2px!important}
+.mh .mb{font-size:18px!important;font-weight:700!important;line-height:1.5!important;--ls:2px;letter-spacing:2px!important}
+.pth h3{font-size:18px!important;font-weight:700!important;line-height:1.5!important;--ls:2px;letter-spacing:2px!important}
+.ftl{font-size:18px!important;font-weight:700!important;line-height:1.5!important;--ls:2px;letter-spacing:2px!important}
+#ctt{font-size:18px!important;font-weight:700!important;line-height:1.5!important;--ls:2px;letter-spacing:2px!important}
 #vt{font-size:15px!important;font-weight:500!important;line-height:1.8!important;--ls:0px;letter-spacing:0px!important}
 .pop.alert .vt{font-size:15px!important;font-weight:500!important;line-height:1.8!important;--ls:0px;letter-spacing:0px!important}
-details[id^=d]>summary{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-details[id^=d]>summary .k{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.qg>summary span{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+details[id^=d]>summary{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
+details[id^=d]>summary .k{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
+.qg>summary span{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
 #vc .d.today{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .pv.act{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-#vc .d{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.pk-i{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.pv{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-#cte{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.ctb{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+#vc .d{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
+.pk-i{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
+.pv{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
+#cte{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
+.ctb{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
 .srow b{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .set summary b{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .so button{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .vtl>span{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.psum>div{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.rl{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.seg span.sl{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.dd{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.cfb .chip{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.psum>div{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
+.rl{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
+.seg span.sl{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
+.dd{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
+.cfb .chip{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
 .srow>span{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .set summary>span{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.pl{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.yr{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.pl{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
+.yr{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
 .srow u{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .set summary u{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.sum:not(.qnow) .stats .pc{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.qnow .stats .pc{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.stats .cs{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.tg span{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.lv1 em.le{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.lv1>span{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-details[id^=d]>summary .en{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.grid button.c span{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.grid button.c s{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-button.all{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-#vc .wd div{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.qt{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.fixl{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.fix button{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.chip.td{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-#pd{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-#vr{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-#pkt{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.qpn1{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.qgo span{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.qmore{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.esvr button{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-details[id^=d]>summary .meta{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.cnt{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.qcap{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.fnote{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.pop .wd div{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.dn span{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.qm{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.qw{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.qw span{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.qmsg{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.qy{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.sh{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.esvn{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.verf{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.ctd{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.ctl span{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-p.note{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.grid button.c i{font-size:10px!important;font-weight:300!important;line-height:1!important;--ls:0px;letter-spacing:0px!important}
-.dr .dt span{font-size:10px!important;font-weight:300!important;line-height:1!important;--ls:0px;letter-spacing:0px!important}
-small.dy{font-size:10px!important;font-weight:300!important;line-height:1!important;--ls:0px;letter-spacing:0px!important}
-.vtb{font-size:10px!important;font-weight:300!important;line-height:1!important;--ls:0px;letter-spacing:0px!important}
-.tg2{font-size:10px!important;font-weight:300!important;line-height:1!important;--ls:0px;letter-spacing:0px!important}
-.ctto small{font-size:10px!important;font-weight:300!important;line-height:1!important;--ls:0px;letter-spacing:0px!important}
-.cth{font-size:10px!important;font-weight:300!important;line-height:1!important;--ls:0px;letter-spacing:0px!important}
-.sh{--ls:1px;letter-spacing:1px!important}
-.srow b{--ls:1px;letter-spacing:1px!important}
-.set summary b{--ls:1px;letter-spacing:1px!important}
-.so button{--ls:1px;letter-spacing:1px!important}
-.vtl>span{--ls:1px;letter-spacing:1px!important}
-.srow>span{--ls:1px;letter-spacing:1px!important}
-.set summary>span{--ls:1px;letter-spacing:1px!important}
-.srow u{--ls:1px;letter-spacing:1px!important}
-.set summary u{--ls:1px;letter-spacing:1px!important}
-.vtb{--ls:1px;letter-spacing:1px!important}
-.esvr button{--ls:1px;letter-spacing:1px!important}
-.esvn{--ls:1px;letter-spacing:1px!important}
-.tg2{--ls:1px;letter-spacing:1px!important}
-.verf{--ls:1px;letter-spacing:1px!important}
+.sum:not(.qnow) .stats .pc{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.qnow .stats .pc{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.stats .cs{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.tg span{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.lv1 em.le{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.lv1>span{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+details[id^=d]>summary .en{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.grid button.c span{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
+.grid button.c s{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
+button.all{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+#vc .wd div{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.qt{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.fixl{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.fix button{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.chip.td{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+#pd{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+#vr{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+#pkt{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.qpn1{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.qgo span{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.qmore{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.esvr button{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+details[id^=d]>summary .meta{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.cnt{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.qcap{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.fnote{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.pop .wd div{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.dn span{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.qm{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.qw{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.qw span{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.qmsg{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.qy{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.sh{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.esvn{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.verf{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.ctd{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.ctl span{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+p.note{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.grid button.c i{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.dr .dt span{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+small.dy{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.vtb{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:1px;letter-spacing:1px!important}
+.tg2{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:1px;letter-spacing:1px!important}
+.ctto small{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.cth{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
 .seg span.sl.t2,#pq .qt.qj{letter-spacing:calc(.6em + 2*var(--ls))!important}
 .dr .dt b{font-size:15px!important;font-weight:500!important;line-height:1.8!important}
-.dr .dt span,.dr small.dy{line-height:1!important}
-.fix button{color:var(--acc)!important}
+.dr .dt span,.dr small.dy{line-height:1.2!important}
+
+#vc .d.su{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.pk-i[aria-pressed=true]{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.seg button[aria-pressed=true] span.sl{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.ctb.pri{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.cfb .chip.pri{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}.fix button{color:var(--acc)!important}
 .tg span,.qnow .qm,.esvr button{color:var(--acc)}
 .qm,.esvr button{color:var(--ink)!important}
 .tg span{color:var(--acc)!important}
 .qnow .qpas>div{white-space:nowrap}.qnow .qpas>div.wr{white-space:normal}.qpas .nw{white-space:nowrap}
 .dr{align-items:flex-start!important}
 .dr .dt{position:relative;top:-5px}
-.dr .dp2{margin-top:3.5px}
+.dr .dp2{margin-top:2px}
 html,body{touch-action:manipulation}
 #vf .fh{margin-top:42px}
 .pre:empty{display:none}
@@ -538,7 +529,7 @@ ko:{tab_p:"진행률",tab_c:"달력",tab_l:"페이스 플래너",tab_s:"설정",
  all:"전체",ot:"구약",nt:"신약",daily:"매일",d5:"주5일",d3:"주3일",other:"기타",tbd:"미정",c1:"1장",c3:"3장",c5:"5장",bible:"성경순",chrono:"연대순",pick:"목록 보기",
  fx1:"주",fx2:"일",ax2:"장",fx_aria:"주당 읽는 일수 (1~7)",ax_aria:"하루 읽는 장 수 (1~100)",
  fnote:"페이스는 언제든 돌아와 수정할 수 있어요.",fixL:"아래의 기준으로 설정값을 자동으로 조정할 수 있어요.",fixA:">  빈도·분량은 그대로 두고 목표일을 바꿀게요.",fixB:">  목표일에 맞춰 빈도·분량을 바꿀게요.",fixR:"돌아가기",vprev:"이전 말씀 보기",vmark:"읽음 표시",
- del_q:"이 페이스를 삭제할까요?",cancel:"취소",del:"삭제",okb:"확인",wip:"준비 중이에요.",soon:"준비 중",dev_on:"개발자 모드를 켰어요.",dev_off:"개발자 모드를 껐어요.",r_upd:"최신 버전 확인",r_terms:"이용약관",upd_wait:"확인하고 있어요.",upd_new:v=>`새 버전 (ver ${v})이 있어요. 지금 새로 불러올까요?`,upd_ok:v=>`최신 버전이에요 (ver ${v}).`,upd_fail:"인터넷 연결을 확인해 주세요.",ct_t:"문의하기",ct_body:"이 기기의 메일 앱이 미리 작성된 메시지와 함께 열려요. 내용을 적어서 보내 주세요.",ct_none:"준비 중",ct_to:"받는 사람",ct_inc:"메일에 함께 담기는 정보",ct_open:"메일 앱 열기",ct_copy:"이메일 주소 복사",ct_copied:"복사했어요",ct_close_a:"닫기",ct_copy_a:"복사",ct_l:["앱 버전","기기","언어","계정","구독"],ct_v:["연결 안 됨","무료"],ct_sub:"Bible Reading Pace 문의",
+ del_q:"이 페이스를 삭제할까요?",cancel:"취소",del:"삭제",okb:"확인",wip:"준비 중이에요.",soon:"준비 중",dev_on:"개발자 모드를 켰어요.",dev_off:"개발자 모드를 껐어요.",r_upd:"최신 버전 확인",r_terms:"이용약관",upd_wait:"확인하고 있어요.",upd_new:v=>`새 버전 (ver ${v})이 있어요. 지금 새로 불러올까요?`,upd_ok:v=>`최신 버전이에요 (ver ${v}).`,upd_fail:"인터넷 연결을 확인해 주세요.",ct_t:"문의하기",ct_body:"이 기기의 메일 앱이 미리 작성된 메시지와 함께 열려요.\n내용을 적어서 보내 주세요.",ct_none:"준비 중",ct_to:"받는 사람",ct_inc:"메일에 함께 담기는 정보",ct_open:"메일 앱 열기",ct_copy:"이메일 주소 복사",ct_copied:"복사했어요",ct_close_a:"닫기",ct_copy_a:"복사",ct_l:["앱 버전","기기","언어","계정","구독"],ct_v:["연결 안 됨","무료"],ct_sub:"Bible Reading Pace 문의",
  add_tip:'💡 진행률과 연동되는 대표 페이스는 하나만 정할 수 있어요. 이름 옆 동그라미(<i class="rdd"></i>)를 눌러 정하고, 다시 누르면 해제돼요. 모두 해제하면 연동 없이 사용해요.',
  h_f:"읽는 빈도는 주 1~7일 사이의 숫자로 입력해 주세요.",h_a:"하루 분량은 1~100장 사이의 숫자로 입력해 주세요.",h_t:"목표일을 선택해 주세요. 아직 정하지 않았다면 '미정'을 눌러 주세요.",
  form_new:"새 페이스 정하기",form_edit:"페이스 수정",my:"내 페이스",pn:n=>`페이스 ${n}`,sel_date:"날짜 선택",
@@ -565,7 +556,7 @@ en:{tab_p:"Progress",tab_c:"Calendar",tab_l:"Pace Planner",tab_s:"Settings",ttl:
  all:"All",ot:"OT",nt:"NT",daily:"Daily",d5:"5 days",d3:"3 days",other:"Other",tbd:"TBD",c1:"1",c3:"3",c5:"5",bible:"Book",chrono:"Chrono",pick:"From list",
  fx1:"",fx2:"days",ax2:"",fx_aria:"Days per week (1-7)",ax_aria:"Chapters per day (1-100)",
  fnote:"You can come back and edit your pace anytime.",fixL:"You can auto-adjust your settings.",fixA:">  Keep my reading plan, update the target date.",fixB:">  Keep my target date, adjust the reading plan.",fixR:"Return",vprev:"Previous verse",vmark:"Mark as read",
- del_q:"Delete this pace?",cancel:"Cancel",del:"Delete",okb:"OK",wip:"Coming soon.",soon:"Soon",dev_on:"Developer mode on.",dev_off:"Developer mode off.",r_upd:"Check for updates",r_terms:"Terms of use",upd_wait:"Checking.",upd_new:v=>`A new version (ver ${v}) is available. Reload now?`,upd_ok:v=>`You are up to date (ver ${v}).`,upd_fail:"Please check your internet connection.",ct_t:"Contact us",ct_body:"Your mail app opens with a ready message. Describe your question and send it.",ct_none:"Coming soon",ct_to:"To",ct_inc:"Included in the email",ct_open:"Open mail app",ct_copy:"Copy email address",ct_copied:"Copied",ct_close_a:"Close",ct_copy_a:"Copy",ct_l:["App version","Platform","Language","Account","Subscription"],ct_v:["Not connected","Free"],ct_sub:"Bible Reading Pace Support",
+ del_q:"Delete this pace?",cancel:"Cancel",del:"Delete",okb:"OK",wip:"Coming soon.",soon:"Soon",dev_on:"Developer mode on.",dev_off:"Developer mode off.",r_upd:"Check for updates",r_terms:"Terms of use",upd_wait:"Checking.",upd_new:v=>`A new version (ver ${v}) is available. Reload now?`,upd_ok:v=>`You are up to date (ver ${v}).`,upd_fail:"Please check your internet connection.",ct_t:"Contact us",ct_body:"Your mail app opens with a ready message.\nDescribe your question and send it.",ct_none:"Coming soon",ct_to:"To",ct_inc:"Included in the email",ct_open:"Open mail app",ct_copy:"Copy email address",ct_copied:"Copied",ct_close_a:"Close",ct_copy_a:"Copy",ct_l:["App version","Platform","Language","Account","Subscription"],ct_v:["Not connected","Free"],ct_sub:"Bible Reading Pace Support",
  add_tip:'💡 Only one main pace can be linked to your progress. Tap the circle (<i class="rdd"></i>) next to a name to select it, and tap again to unselect. With none selected, your progress isn\'t linked to any pace.',
  h_f:"Enter a number from 1 to 7 for days per week.",h_a:"Enter a number from 1 to 100 for chapters per day.",h_t:"Choose a target date, or tap TBD if you haven't decided yet.",
  form_new:"Set a new pace",form_edit:"Edit pace",my:"My pace",pn:n=>`Pace ${n}`,sel_date:"Select date",
@@ -587,7 +578,7 @@ en:{tab_p:"Progress",tab_c:"Calendar",tab_l:"Pace Planner",tab_s:"Settings",ttl:
  s_lang:"Language",s_theme:"Theme",s_ver:"Version",s_link:"Link Progress & Pace",q_go:"Go to today",q_more:"Show more",q_less:"Show less",undo:"Undo",q_now:"Today's Reading",q_days:(a,b)=>`${a}/${b} days`,q_prog:(n,t)=>`${n} of ${t} days`,q_ahead:n=>`${n} day${n>1?'s':''} ahead!`,q_onp:"Right on pace!",q_behind:n=>`${n} day${n>1?'s':''} behind - no rush`,r_fsz:"Text size",g_esv:"English Bible (ESV)",r_esv:"ESV connection",esv_save:"Save",esv_test:"Test connection",esv_clear:"Clear",esv_note:"Enter only the ESV key (the word Token is optional). It is stored only in this device's browser. For personal use only.",esv_ph:"ESV key",esv_badurl:"Enter an address starting with https://",esv_set:"Set",esv_unset:"Not set",esv_ok:"Connected.",esv_empty:"Enter the ESV key.",esv_saved:"Saved.",esv_cleared:"Cleared.",esv_wait:"Checking. Please wait.",esv_401:"The key was not accepted. Please check it.",esv_429:"Request limit reached. Try again shortly.",esv_net:"The request could not be sent. External requests may be blocked here, or there is a network problem.",r_bar:"Tab bar transparency",v_std:"Default",q_read:"Read",q_un:"To read",q_un_e:"",q_rd:"Read",q_rd_e:"",q_d:n=>`${n} day${n>1?"s":""}`,q_y:y=>`${y}`,q_all:"All done.",q_nop:"Create a pace first.",q_t:"Daily Plan",bl_hint:"Tap the groups in the order you want to read. You can pick more than one.",bl_clear:"Clear",r_pick:n=>`${n} books selected`,g0:"Pentateuch",g1:"History",g2:"Poetry",g3:"Major Prophets",g4:"Minor Prophets",g5:"Gospels",g6:"History",g7:"Epistles",g8:"Prophecy",g_acc:"Account",g_data:"Data",g_noti:"Notifications",g_gen:"General",g_bib:"Bible",g_plan:"Reading Plan",g_app:"App",r_me:"My info",r_sub:"Subscription",r_exp:"Export",r_imp:"Import",r_sync:"Sync",r_rst:"Reset",r_nrd:"Reading reminder",r_nrep:"Repeat",r_ntime:"Time",v_daily:"Every day",v_time:"8:00 AM",r_nvs:"Verse of the day",r_link:"Link Progress & Pace",r_rec:"Recalculate",r_wk:"Week starts on",v_sun:"Sunday",r_prv:"Previous passages",v_n1:"1",r_ver:"App version",r_rate:"Rate the app",r_priv:"Privacy policy",r_ctc:"Contact us",tag_pgpc:"Progress · Pace",tag_pc:"Pace",tag_cl:"Calendar",pv_open:"Daily plan",pv_t:"Reading plan",pv_none:"Can't build a plan. Check the target date, frequency and amount.",pv_ord:"Chrono and list orders are coming soon, so this follows book order.",exp_done:"Backup file saved.",imp_q:"Importing replaces your current records with the backup. Continue?",imp_bad:"Can't read this backup file.",pvd:(d,b)=>`${d}`,pv_chk:"Mark as read",verL:[["KJV","King James Version","KJV"],["ESV","English Standard Version","ESV"],["NIV","New International Version","NIV"]]}};
 const tr=(k,...a)=>{const v=(I[ST.lang]||I.ko)[k];return typeof v==="function"?v(...a):v};
 function verUI(){const L=I[ST.lang].verL;document.getElementById("svv").textContent=L[0][2];document.getElementById("so-v").innerHTML=L.map((v,i)=>`<button data-ver="${i}" aria-pressed="${i===0}"${i?" disabled":""}><span class="vtl"><i class="vtb">${v[0]}</i><span>${v[1]}</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7"/></svg></button>`).join("")}
-const APPV="0.64",CONTACT="";
+const APPV="0.65",CONTACT="";
 function applyBar(){const t=Math.round(Math.min(100,Math.max(0,Number.isFinite(+ST.bt)?+ST.bt:50))/10)*10;document.documentElement.style.setProperty("--ba",(1-t/100).toFixed(2));document.documentElement.style.setProperty("--bb",Math.round(18-16*t/100)+"px");const i=document.getElementById("bat");if(i)i.value=t;document.getElementById("bav").textContent=t+"%";const l=document.getElementById("bat");if(l)l.setAttribute("aria-valuetext",t+"%")}
 document.getElementById("bat").addEventListener("input",e=>{ST.bt=+e.target.value;applyBar()});
 document.getElementById("bat").addEventListener("change",()=>{try{localStorage.setItem(SKEY,JSON.stringify(ST))}catch(x){}});
