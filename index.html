@@ -168,7 +168,7 @@ main{padding:20px 16px calc(100px + env(safe-area-inset-bottom,0px))}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .tabs{background:rgba(29,37,53,.3)}}
 :root[data-theme="dark"] .tabs{background:rgba(29,37,53,.3)}
 .dn span{font-size:11.5px}
-.grid{grid-template-columns:repeat(6,1fr);margin-left:-17.5px;margin-right:14.5px}
+.grid{grid-template-columns:repeat(5,1fr);gap:12px 14px;margin-left:-17.5px;margin-right:14.5px}
 .grid .c{container-type:inline-size}.grid .c span{font-size:calc(100cqw*.27)}.grid .c i{font-size:calc(100cqw*.19)}
 
 .dr .dp2{margin-left:-2.9px}
@@ -215,6 +215,8 @@ main{padding:20px 16px calc(100px + env(safe-area-inset-bottom,0px))}
 
 /* v0.54 */
 .sum:not(.qnow) .stats{padding-top:29px}.qnow .stats .ttl{margin-top:29px}
+.qnow .stats.l1 .ttl{margin-top:34px}
+body:has(#sw[aria-checked=false]) .sum:not(.qnow) .stats{padding-top:34px}
 .dr .dp2{gap:6.5px;margin-left:.56px}
 #dp .dpy{position:absolute;top:13px;left:20px;margin:0;padding:0}
 #bl .card{display:flex;flex-direction:column;overflow:hidden;max-height:88vh;text-align:left}
@@ -584,7 +586,7 @@ en:{tab_p:"Progress",tab_c:"Calendar",tab_l:"Pace Planner",tab_s:"Settings",ttl:
  s_lang:"Language",s_theme:"Theme",s_ver:"Version",s_link:"Link Progress & Pace",q_go:"Go to today",q_more:"Show more",q_less:"Show less",undo:"Undo",q_now:"Today's Reading",q_days:(a,b)=>`${a}/${b} days`,q_prog:(n,t)=>`${n} of ${t} days`,q_ahead:n=>`${n} day${n>1?'s':''} ahead!`,q_onp:"Right on pace!",q_behind:n=>`${n} day${n>1?'s':''} behind - no rush`,r_fsz:"Text size",g_esv:"English Bible (ESV)",r_esv:"ESV connection",esv_save:"Save",esv_test:"Test connection",esv_clear:"Clear",esv_note:"Enter only the ESV key (the word Token is optional). It is stored only in this device's browser. For personal use only.",esv_ph:"ESV key",esv_badurl:"Enter an address starting with https://",esv_set:"Set",esv_unset:"Not set",esv_ok:"Connected.",esv_empty:"Enter the ESV key.",esv_saved:"Saved.",esv_cleared:"Cleared.",esv_wait:"Checking. Please wait.",esv_401:"The key was not accepted. Please check it.",esv_429:"Request limit reached. Try again shortly.",esv_net:"The request could not be sent. External requests may be blocked here, or there is a network problem.",r_bar:"Tab bar transparency",v_std:"Default",q_read:"Read",q_un:"To read",q_un_e:"",q_rd:"Read",q_rd_e:"",q_d:n=>`${n} day${n>1?"s":""}`,q_y:y=>`${y}`,q_all:"All done.",q_nop:"Create a pace first.",q_t:"Daily Plan",bl_hint:"Tap the groups in the order you want to read. You can pick more than one.",bl_clear:"Clear",r_pick:n=>`${n} books selected`,g0:"Pentateuch",g1:"History",g2:"Poetry",g3:"Major Prophets",g4:"Minor Prophets",g5:"Gospels",g6:"History",g7:"Epistles",g8:"Prophecy",g_acc:"Account",g_data:"Data",g_noti:"Notifications",g_gen:"General",g_bib:"Bible",g_plan:"Reading Plan",g_app:"App",r_me:"My info",r_sub:"Subscription",r_exp:"Export",r_imp:"Import",r_sync:"Sync",r_rst:"Reset",r_nrd:"Reading reminder",r_nrep:"Repeat",r_ntime:"Time",v_daily:"Every day",v_time:"8:00 AM",r_nvs:"Verse of the day",r_link:"Link Progress & Pace",r_rec:"Recalculate",r_wk:"Week starts on",v_sun:"Sunday",r_prv:"Previous passages",v_n1:"1",r_ver:"App version",r_rate:"Rate the app",r_priv:"Privacy policy",r_ctc:"Contact us",tag_pgpc:"Progress · Pace",tag_pc:"Pace",tag_cl:"Calendar",pv_open:"Daily plan",pv_t:"Reading plan",pv_none:"Can't build a plan. Check the target date, frequency and amount.",pv_ord:"Chrono and list orders are coming soon, so this follows book order.",exp_done:"Backup file saved.",imp_q:"Importing replaces your current records with the backup. Continue?",imp_bad:"Can't read this backup file.",pvd:(d,b)=>`${d}`,pv_chk:"Mark as read",verL:[["KJV","King James Version","KJV"],["ESV","English Standard Version","ESV"],["NIV","New International Version","NIV"]]}};
 const tr=(k,...a)=>{const v=(I[ST.lang]||I.ko)[k];return typeof v==="function"?v(...a):v};
 function verUI(){const L=I[ST.lang].verL;document.getElementById("svv").textContent=L[0][2];document.getElementById("so-v").innerHTML=L.map((v,i)=>`<button data-ver="${i}" aria-pressed="${i===0}"${i?" disabled":""}><span class="vtl"><i class="vtb">${v[0]}</i><span>${v[1]}</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7"/></svg></button>`).join("")}
-const APPV="0.60",CONTACT="";
+const APPV="0.61",CONTACT="";
 function applyBar(){const t=Math.round(Math.min(100,Math.max(0,Number.isFinite(+ST.bt)?+ST.bt:50))/10)*10;document.documentElement.style.setProperty("--ba",(1-t/100).toFixed(2));document.documentElement.style.setProperty("--bb",Math.round(18-16*t/100)+"px");const i=document.getElementById("bat");if(i)i.value=t;document.getElementById("bav").textContent=t+"%";const l=document.getElementById("bat");if(l)l.setAttribute("aria-valuetext",t+"%")}
 document.getElementById("bat").addEventListener("input",e=>{ST.bt=+e.target.value;applyBar()});
 document.getElementById("bat").addEventListener("change",()=>{try{localStorage.setItem(SKEY,JSON.stringify(ST))}catch(x){}});
@@ -722,7 +724,7 @@ function renderQ(){
  if(un.length)h+=`<section id="qsU"><div class="lv1"><b class="ln">${tr("q_un")}</b><em class="le">${tr("q_un_e")}</em>${rd.length?jmp("R",false):""}</div><div class="ql">${sec("U",um)}</div></section>`;
  if(rd.length)h+=`<section id="qsR"><div class="lv1"><b class="ln">${tr("q_rd")}</b><em class="le">${tr("q_rd_e")}</em>${un.length?jmp("U",true):""}</div><div class="ql">${sec("R",rm)}</div></section>`;
  card.innerHTML=h;alignQgo();fitQ();requestAnimationFrame(fitQ)}
-function fitQ(){const L=[...document.querySelectorAll(".qnow .qpas>div")];if(!L.length)return;L.forEach(e=>e.style.removeProperty("font-size"));let sz=null;L.forEach(e=>e.classList.remove("wr"));for(const s of [18]){if(L.every(e=>e.scrollWidth<=e.clientWidth+.5))break;sz=s;L.forEach(e=>e.style.setProperty("font-size",s+"px","important"))}if(sz&&!L.every(e=>e.scrollWidth<=e.clientWidth+.5))L.forEach(e=>e.classList.add("wr"))}
+function fitQ(){const L=[...document.querySelectorAll(".qnow .qpas>div")];if(!L.length)return;const stq=L[0].closest(".stats");L.forEach(e=>e.style.removeProperty("font-size"));let sz=null;L.forEach(e=>e.classList.remove("wr"));for(const s of [18]){if(L.every(e=>e.scrollWidth<=e.clientWidth+.5))break;sz=s;L.forEach(e=>e.style.setProperty("font-size",s+"px","important"))}if(sz&&!L.every(e=>e.scrollWidth<=e.clientWidth+.5))L.forEach(e=>e.classList.add("wr"));if(stq)stq.classList.toggle("l1",L.length===1&&!L[0].classList.contains("wr"))}
 addEventListener("resize",()=>fitQ());if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>fitQ());
 function alignQgo(){const g=document.getElementById("qgo");if(!g)return;g.style.width="";const lab=document.querySelector("#vp .tg span");if(!lab)return;const t=document.createElement("span");t.textContent=lab.textContent;t.style.cssText="position:absolute;visibility:hidden;white-space:nowrap;font-size:13px";document.getElementById("vq").appendChild(t);const w=t.getBoundingClientRect().width;t.remove();g.style.width=(w+10+42)+"px"}
 const EK="bible-esv-key";
