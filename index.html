@@ -101,7 +101,7 @@ summary:focus-visible,.c:focus-visible,.all:focus-visible{outline:2px solid var(
 .dr.today .dt b{color:var(--acc)}.dr.done .dp2,.dr.done .dt b{color:var(--mute)}
 .dc{flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--line);background:none;padding:0;display:grid;place-items:center;cursor:pointer;color:var(--mute)}.dc svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;opacity:0}.dc[aria-pressed=true]{border-color:var(--mute)}.dc[aria-pressed=true] svg{opacity:1}
 .qnone{font-size:13px;color:var(--mute);margin:16px 0 8px;line-height:1.6}
-.pmid{display:flex;align-items:center;gap:12px}.pmid .psum{flex:1;min-width:0}.dn{flex:none;position:relative;width:60px;height:60px;margin-right:-4px}.dn svg{display:block;width:60px;height:60px}.dn span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--ink);letter-spacing:0;padding-bottom:1px;box-sizing:border-box}
+.pmid{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px}.pmid .psum{display:contents}.psum>div{grid-column:1}.psum>div.w{grid-column:1/-1}html:not([lang=en]) .psum>div.w{white-space:nowrap}.dn{grid-column:2;align-self:center;justify-self:end;position:relative;width:76px;height:76px;margin-right:6px}.dn svg{display:block;width:76px;height:76px}.dn span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--ink);letter-spacing:0;padding-bottom:1px;box-sizing:border-box}
 .fix{position:relative;display:block!important;height:96px;margin:6px 0 0}.fix.off,.fix.off *{visibility:hidden}.fix{min-height:96px;flex:none}.fix .fixh{position:absolute;left:0;top:0;width:100%}.fix #fx1{position:absolute;left:0;top:30px}.fix #fx2{position:absolute;left:0;top:60px}.ub{width:44px;height:44px;border:0;background:none;color:var(--mute);cursor:pointer;padding:0;display:grid;place-items:center}.ub svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.ub:disabled{opacity:.3;cursor:default}.fix .fixh[hidden],.fix button[hidden]{display:none!important}
 #vf .pr.col,#vf .pr.sub{padding-bottom:17.5px}
 .fcard.qnow{height:170px;box-sizing:border-box;padding:20px 20px 12px;display:flex;flex-direction:column}.qnh{margin:0;font:500 19px/25.5px "Noto Sans KR",system-ui,sans-serif;color:var(--ink);letter-spacing:.18em;border-bottom:2px solid var(--ink);padding:0 0 7px .5px}.qnow .dr{border:0;padding:10px 0 0;margin:0}.qnow .dr.now .dt b{color:var(--acc)}.qnow .qfoot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px}.qnow .qgo{margin-left:auto;padding:4px 0}.qnow .qsel{display:flex;gap:6px;overflow-x:auto;padding:0}.qnow .qsel .chip{padding:3px 10px;font-size:12px;flex:none}
@@ -210,7 +210,7 @@ main{padding:20px 16px calc(100px + env(safe-area-inset-bottom,0px))}
 .qnow .stats{padding-top:26px}
 .srow.slr{width:100%;box-sizing:border-box}.tabs{-webkit-backdrop-filter:blur(var(--bb,10px)) saturate(1.6);backdrop-filter:blur(var(--bb,10px)) saturate(1.6)}.srow.slr>span{flex:1 1 auto}#bav{margin-left:auto;text-align:right}.srow.slr b{margin-left:auto}.set{--ls:1px}.verf{letter-spacing:1px}
 .esvr{justify-content:flex-end}
-.vtb{width:46px;height:46px;border-radius:10px;font-weight:400;font-size:10px}
+.vtb{width:50px;height:50px;border-radius:10px;font-weight:400;font-size:10px}
 .so button:disabled{opacity:1;color:var(--mute)}.so button:disabled .vtb{color:var(--mute);background:var(--bg)}
 
 /* v0.54 */
@@ -247,7 +247,7 @@ details[id^=d]>summary .k{font-size:15px!important;font-weight:500!important;lin
 #vc .d.today{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .pv.act{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 #vc .d{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
-.pk-i{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
+.pk-i{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .pv{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
 #cte{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
 .ctb{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
@@ -293,7 +293,7 @@ details[id^=d]>summary .meta{font-size:12px!important;font-weight:300!important;
 .qcap{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
 .fnote{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
 .pop .wd div{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
-.dn span{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.dn span{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important;color:var(--ink)!important;padding-left:1px!important}
 .qm{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
 .qw{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
 .qw span{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
@@ -319,6 +319,7 @@ small.dy{font-size:12px!important;font-weight:300!important;line-height:1.2!impo
 #vc .d.su{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .pk-i[aria-pressed=true]{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .seg button[aria-pressed=true] span.sl{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+html:not([lang=en]) .seg button[aria-pressed=true] span.sl.t2{letter-spacing:calc(.6em + 2*var(--ls))!important;margin-right:calc(-.6em - 2*var(--ls))}
 .ctb.pri{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .cfb .chip.pri{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}.fix button{color:var(--acc)!important}
 .tg span,.qnow .qm,.esvr button{color:var(--acc)}
@@ -578,7 +579,7 @@ en:{tab_p:"Progress",tab_c:"Calendar",tab_l:"Pace Planner",tab_s:"Settings",ttl:
  s_lang:"Language",s_theme:"Theme",s_ver:"Version",s_link:"Link Progress & Pace",q_go:"Go to today",q_more:"Show more",q_less:"Show less",undo:"Undo",q_now:"Today's Reading",q_days:(a,b)=>`${a}/${b} days`,q_prog:(n,t)=>`${n} of ${t} days`,q_ahead:n=>`${n} day${n>1?'s':''} ahead!`,q_onp:"Right on pace!",q_behind:n=>`${n} day${n>1?'s':''} behind - no rush`,r_fsz:"Text size",g_esv:"English Bible (ESV)",r_esv:"ESV connection",esv_save:"Save",esv_test:"Test connection",esv_clear:"Clear",esv_note:"Enter only the ESV key (the word Token is optional). It is stored only in this device's browser. For personal use only.",esv_ph:"ESV key",esv_badurl:"Enter an address starting with https://",esv_set:"Set",esv_unset:"Not set",esv_ok:"Connected.",esv_empty:"Enter the ESV key.",esv_saved:"Saved.",esv_cleared:"Cleared.",esv_wait:"Checking. Please wait.",esv_401:"The key was not accepted. Please check it.",esv_429:"Request limit reached. Try again shortly.",esv_net:"The request could not be sent. External requests may be blocked here, or there is a network problem.",r_bar:"Tab bar transparency",v_std:"Default",q_read:"Read",q_un:"To read",q_un_e:"",q_rd:"Read",q_rd_e:"",q_d:n=>`${n} day${n>1?"s":""}`,q_y:y=>`${y}`,q_all:"All done.",q_nop:"Create a pace first.",q_t:"Daily Plan",bl_hint:"Tap the groups in the order you want to read. You can pick more than one.",bl_clear:"Clear",r_pick:n=>`${n} books selected`,g0:"Pentateuch",g1:"History",g2:"Poetry",g3:"Major Prophets",g4:"Minor Prophets",g5:"Gospels",g6:"History",g7:"Epistles",g8:"Prophecy",g_acc:"Account",g_data:"Data",g_noti:"Notifications",g_gen:"General",g_bib:"Bible",g_plan:"Reading Plan",g_app:"App",r_me:"My info",r_sub:"Subscription",r_exp:"Export",r_imp:"Import",r_sync:"Sync",r_rst:"Reset",r_nrd:"Reading reminder",r_nrep:"Repeat",r_ntime:"Time",v_daily:"Every day",v_time:"8:00 AM",r_nvs:"Verse of the day",r_link:"Link Progress & Pace",r_rec:"Recalculate",r_wk:"Week starts on",v_sun:"Sunday",r_prv:"Previous passages",v_n1:"1",r_ver:"App version",r_rate:"Rate the app",r_priv:"Privacy policy",r_ctc:"Contact us",tag_pgpc:"Progress · Pace",tag_pc:"Pace",tag_cl:"Calendar",pv_open:"Daily plan",pv_t:"Reading plan",pv_none:"Can't build a plan. Check the target date, frequency and amount.",pv_ord:"Chrono and list orders are coming soon, so this follows book order.",exp_done:"Backup file saved.",imp_q:"Importing replaces your current records with the backup. Continue?",imp_bad:"Can't read this backup file.",pvd:(d,b)=>`${d}`,pv_chk:"Mark as read",verL:[["KJV","King James Version","KJV"],["ESV","English Standard Version","ESV"],["NIV","New International Version","NIV"]]}};
 const tr=(k,...a)=>{const v=(I[ST.lang]||I.ko)[k];return typeof v==="function"?v(...a):v};
 function verUI(){const L=I[ST.lang].verL;document.getElementById("svv").textContent=L[0][2];document.getElementById("so-v").innerHTML=L.map((v,i)=>`<button data-ver="${i}" aria-pressed="${i===0}"${i?" disabled":""}><span class="vtl"><i class="vtb">${v[0]}</i><span>${v[1]}</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7"/></svg></button>`).join("")}
-const APPV="0.65",CONTACT="";
+const APPV="0.66",CONTACT="";
 function applyBar(){const t=Math.round(Math.min(100,Math.max(0,Number.isFinite(+ST.bt)?+ST.bt:50))/10)*10;document.documentElement.style.setProperty("--ba",(1-t/100).toFixed(2));document.documentElement.style.setProperty("--bb",Math.round(18-16*t/100)+"px");const i=document.getElementById("bat");if(i)i.value=t;document.getElementById("bav").textContent=t+"%";const l=document.getElementById("bat");if(l)l.setAttribute("aria-valuetext",t+"%")}
 document.getElementById("bat").addEventListener("input",e=>{ST.bt=+e.target.value;applyBar()});
 document.getElementById("bat").addEventListener("change",()=>{try{localStorage.setItem(SKEY,JSON.stringify(ST))}catch(x){}});
@@ -682,7 +683,7 @@ function pctOf(p){const tot=vOf(p);if(!tot)return 0;let n=0;
  if(linked(p)){bkOf(p).forEach(b=>{for(let i=0;i<D[b][2].length;i++)if(isOn(b,i))n+=D[b][2][i]})}
  else planDays(p).forEach(d=>{if(isDone(p,d))d.ch.forEach(([b,i])=>n+=D[b][2][i])});
  return Math.min(100,n/tot*100)}
-function dnH(p){const v=pctOf(p),C=2*Math.PI*24;return `<div class="dn" role="img" aria-label="${pctS(v)}%"><svg viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--line)" stroke-width="5"/><circle cx="30" cy="30" r="24" fill="none" stroke="var(--acc)" stroke-width="5" stroke-linecap="round" stroke-dasharray="${(C*v/100).toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90 30 30)"${v?"":' opacity="0"'}/></svg><span>${pctS(v)}%</span></div>`}
+function dnH(p,m){const v=pctOf(p),C=2*Math.PI*24;return `<div class="dn" role="img"${m>0?` style="grid-row:2 / span ${m}"`:""} aria-label="${pctS(v)}%"><svg viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--line)" stroke-width="5"/><circle cx="30" cy="30" r="24" fill="none" stroke="var(--acc)" stroke-width="5" stroke-linecap="round" stroke-dasharray="${(C*v/100).toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90 30 30)"${v?"":' opacity="0"'}/></svg><span>${v>=100?"100":pctS(v)}%</span></div>`}
 let QID=null,QOPEN=null,QMORE=new Set();
 const qcur=()=>PACES.find(x=>x.id===QID)||PACES.find(x=>x.main)||PACES[0];
 function renderQ(){
@@ -755,7 +756,7 @@ function paceLines(p){
  L.push(p.order==="r"&&p.list&&p.list.length?(p.grp&&p.grp.length?p.grp.map(grpL).join(" · "):tr("r_pick",p.list.length)):RS[p.range]);L.push(f[2]);
  if(am)L.push(tr("L_am",am));else if(cc&&cc.mode==="need")L.push(tr("L_ab",cc.x.toFixed(1)));
  L.push(OR[p.order]);
- if(cc&&cc.mode==="fin"&&cc.diff)L.push(tr("L_diff",dot(p.target),Math.abs(cc.diff),cc.diff>0));
+ if(cc&&cc.mode==="fin"&&cc.diff){L.push(tr("L_diff",dot(p.target),Math.abs(cc.diff),cc.diff>0));L.wide=L.length-1}
  return L;
 }
 const ICS='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.8l2.5 5.2 5.7.8-4.1 4 1 5.7L12 16.8l-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg>',ICG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14M5 12h14M5 16h14"/></svg>';
@@ -763,7 +764,7 @@ const ICE='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l.8-4.2L16.
 function renderPlan(){
  const has=PACES.length>0,multi=PACES.length>1;
  document.getElementById("go").hidden=has;document.getElementById("pcs").hidden=!has;document.getElementById("padd").hidden=!has;vlm.classList.toggle("has",has);
- document.getElementById("pcs").innerHTML=PACES.map((p,i)=>`<section class="psc" data-id="${p.id}"><div class="pth"><h3>${escH(paceTitle(p,i))}<button class="rd${p.main?" on":""}" data-set="${p.id}" aria-pressed="${!!p.main}" aria-label="${p.main?tr("main_off"):tr("main_on")}"><i></i></button></h3>${multi?`<button class="ib grip" data-drag="${p.id}" aria-label="${tr("drag")}">${ICG}</button>`:""}</div><div class="pmid"><div class="psum">${paceLines(p).map(t=>`<div>${t}</div>`).join("")}</div>${dnH(p)}</div><div class="pact"><button class="ib" data-edit="${p.id}" aria-label="${tr("edit")}">${ICE}</button><button class="ib del" data-del="${p.id}" aria-label="${tr("del")}">${ICD}</button></div></section>`).join("");
+ document.getElementById("pcs").innerHTML=PACES.map((p,i)=>`<section class="psc" data-id="${p.id}"><div class="pth"><h3>${escH(paceTitle(p,i))}<button class="rd${p.main?" on":""}" data-set="${p.id}" aria-pressed="${!!p.main}" aria-label="${p.main?tr("main_off"):tr("main_on")}"><i></i></button></h3>${multi?`<button class="ib grip" data-drag="${p.id}" aria-label="${tr("drag")}">${ICG}</button>`:""}</div><div class="pmid">${(L=>`<div class="psum">${L.map((t,j)=>`<div${j===0||j===L.wide?' class="w"':""}>${t}</div>`).join("")}</div>${dnH(p,L.length-1-(L.wide?1:0))}`)(paceLines(p))}</div><div class="pact"><button class="ib" data-edit="${p.id}" aria-label="${tr("edit")}">${ICE}</button><button class="ib del" data-del="${p.id}" aria-label="${tr("del")}">${ICD}</button></div></section>`).join("");
 }
 let HIST=[],LASTP=null,HT=0,UNDOING=false;
 function fillPl(){
