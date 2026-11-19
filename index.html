@@ -90,7 +90,7 @@ summary:focus-visible,.c:focus-visible,.all:focus-visible{outline:2px solid var(
 .d{--in:9px;padding:calc(var(--in) - 4.4px) 0 0 calc(var(--in) - 2.5px);font-size:15px}@media(min-width:600px){.d{--in:12px}}
 .d svg{width:12px;height:12px;right:calc(var(--in) - 3.4px);bottom:calc(var(--in) - 2.2px)}
 
-#vc{padding-top:14px}.yr{margin-bottom:26px;padding-bottom:1px}#vc .mh{margin-bottom:14px}#vc .wd,#vc .cal{gap:6px}#vc .wd{margin-bottom:8px}#vc .wd div{font-size:13px;padding:6px 0}
+#vc{padding-top:14px}#vc .cal{gap:0 4px}#cal .d{aspect-ratio:auto;height:52px;min-height:0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;padding:0;display:flex;align-items:center;justify-content:center;z-index:0}#cal .d .n{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;box-sizing:border-box;text-indent:var(--ls)}#cal .d.mk .n{box-shadow:inset 0 0 0 1.5px var(--acc)}#cal .d.today::before{content:"";position:absolute;inset:3px 1px;border-radius:10px;background:color-mix(in srgb,var(--acc) 14%,transparent);z-index:-1}.calh{margin:16px 8px 0;text-wrap:balance;word-break:keep-all}.yr{margin-bottom:26px;padding-bottom:1px}#vc .mh{margin-bottom:14px}#vc .wd{gap:0 4px}#vc .wd{margin-bottom:8px}#vc .wd div{font-size:13px;padding:6px 0}
 
 #vf:not([hidden]){display:flow-root}
 #vq section{scroll-margin-top:70px}.qgo{margin-left:auto;border:0;background:none;padding:4px 0;font:400 12px "Noto Sans KR",system-ui,sans-serif;color:var(--mute);cursor:pointer;letter-spacing:var(--ls)}
@@ -248,7 +248,7 @@ details[id^=d]>summary .k{font-size:15px!important;font-weight:500!important;lin
 .qg>summary span{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
 #vc .d.today{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .pv.act{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-#vc .d{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
+#vc .d{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .pk-i{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .pv{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
 #cte{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:1px;letter-spacing:1px!important}
@@ -311,7 +311,7 @@ p.note{font-size:12px!important;font-weight:300!important;line-height:1.5!import
 .dr .dt span{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 small.dy{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .vtb{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.tg2{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:1px;letter-spacing:1px!important}
+.tg2{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
 .ctto small{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .cth{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .seg span.sl.t2,#pq .qt.qj{letter-spacing:calc(.6em + 2*var(--ls))!important}
@@ -354,6 +354,7 @@ html,body{touch-action:manipulation}
 <div class="mh"><button class="nav" id="pm" aria-label="이전 달"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"/></svg></button><button class="mb" id="mt" aria-haspopup="dialog"></button><button class="nav" id="nm" aria-label="다음 달"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 3 5 5-5 5"/></svg></button></div>
 <div class="wd" id="wd"></div>
 <div class="cal" id="cal"></div>
+<p class="fnote calh" data-t="cal_hint"></p>
 </div>
 <div id="vs" hidden>
 <div class="fcard set">
@@ -475,7 +476,7 @@ function renderCal(){
  document.getElementById("wd").innerHTML=WD.map((_,i)=>`<div${(i+WS)%7?"":' class="su"'}>${WD[(i+WS)%7]}</div>`).join("");
  const first=(new Date(cy,cm,1).getDay()-WS+7)%7,days=new Date(cy,cm+1,0).getDate(),t=key(now.getFullYear(),now.getMonth(),now.getDate());
  let h="<div></div>".repeat(first);
- for(let d=1;d<=days;d++){const k=key(cy,cm,d),r=M.has(k);h+=`<button class="d${k===t?" today":""}${new Date(cy,cm,d).getDay()?"":" su"}" data-k="${k}" aria-label="${tr("dayaria",cm,d,r)}">${d}${r?CROSS:""}</button>`}
+ for(let d=1;d<=days;d++){const k=key(cy,cm,d),r=M.has(k);h+=`<button class="d${r?" mk":""}${k===t?" today":""}${new Date(cy,cm,d).getDay()?"":" su"}" data-k="${k}" aria-label="${tr("dayaria",cm,d,r)}"><span class="n">${d}</span></button>`}
  document.getElementById("cal").innerHTML=h;
 }
 const pop=document.getElementById("pop"),cx=document.getElementById("cx");let cur=null,last=-1;
@@ -544,7 +545,7 @@ ko:{tab_p:"진행률",tab_c:"달력",tab_l:"페이스 플래너",tab_s:"설정",
  pace:"페이스",pace_ph:"이름 입력",pace_aria:"페이스 이름",start:"시작일",target:"목표일",range:"읽을 범위",freq:"읽을 빈도",amt:"하루 분량",order:"읽을 순서",
  all:"전체",ot:"구약",nt:"신약",daily:"매일",d5:"주5일",d3:"주3일",other:"기타",tbd:"미정",c1:"1장",c3:"3장",c5:"5장",bible:"성경순",chrono:"연대순",pick:"목록 보기",
  fx1:"주",fx2:"일",ax2:"장",fx_aria:"주당 읽는 일수 (1~7)",ax_aria:"하루 읽는 장 수 (1~100)",
- fnote:"페이스는 언제든 돌아와 수정할 수 있어요.",fixL:"아래의 기준으로 설정값을 자동으로 조정할 수 있어요.",fixA:">  빈도·분량은 그대로 두고 목표일을 바꿀게요.",fixB:">  목표일에 맞춰 빈도·분량을 바꿀게요.",fixR:"돌아가기",vprev:"이전 말씀 보기",vmark:"읽음 표시",
+ fnote:"페이스는 언제든 돌아와 수정할 수 있어요.",cal_hint:"말씀을 읽은 날은 날짜를 눌러 보세요. 오늘의 말씀이 열리고, 십자가를 누르면 그날에 동그라미가 그려져요.",fixL:"아래의 기준으로 설정값을 자동으로 조정할 수 있어요.",fixA:">  빈도·분량은 그대로 두고 목표일을 바꿀게요.",fixB:">  목표일에 맞춰 빈도·분량을 바꿀게요.",fixR:"돌아가기",vprev:"이전 말씀 보기",vmark:"읽음 표시",
  del_q:"이 페이스를 삭제할까요?",cancel:"취소",del:"삭제",okb:"확인",wip:"준비 중이에요.",soon:"준비 중",dev_on:"개발자 모드를 켰어요.",dev_off:"개발자 모드를 껐어요.",r_upd:"최신 버전 확인",r_terms:"이용약관",upd_wait:"확인하고 있어요.",upd_new:v=>`새 버전 (ver ${v})이 있어요. 지금 새로 불러올까요?`,upd_ok:v=>`최신 버전이에요 (ver ${v}).`,upd_fail:"인터넷 연결을 확인해 주세요.",ct_t:"문의하기",ct_body:"이 기기의 메일 앱이 미리 작성된 메시지와 함께 열려요.\n내용을 적어서 보내 주세요.",ct_none:"준비 중",ct_to:"받는 사람",ct_inc:"메일에 함께 담기는 정보",ct_open:"메일 앱 열기",ct_copy:"이메일 주소 복사",ct_copied:"복사했어요",ct_close_a:"닫기",ct_copy_a:"복사",ct_l:["앱 버전","기기","언어","계정","구독"],ct_v:["연결 안 됨","무료"],ct_sub:"Bible Reading Pace 문의",
  add_tip:'💡 진행률과 연동되는 대표 페이스는 하나만 정할 수 있어요. 이름 옆 동그라미(<i class="rdd"></i>)를 눌러 정하고, 다시 누르면 해제돼요. 모두 해제하면 연동 없이 사용해요.',
  h_f:"읽는 빈도는 주 1~7일 사이의 숫자로 입력해 주세요.",h_a:"하루 분량은 1~100장 사이의 숫자로 입력해 주세요.",h_t:"목표일을 선택해 주세요. 아직 정하지 않았다면 '미정'을 눌러 주세요.",
@@ -571,7 +572,7 @@ en:{tab_p:"Progress",tab_c:"Calendar",tab_l:"Pace Planner",tab_s:"Settings",ttl:
  pace:"Pace",pace_ph:"Enter name",pace_aria:"Pace name",start:"Start date",target:"Target date",range:"Range",freq:"Days per week",amt:"Chapters per day",order:"Order",
  all:"All",ot:"OT",nt:"NT",daily:"Daily",d5:"5 days",d3:"3 days",other:"Other",tbd:"TBD",c1:"1",c3:"3",c5:"5",bible:"Book",chrono:"Chrono",pick:"From list",
  fx1:"",fx2:"days",ax2:"",fx_aria:"Days per week (1-7)",ax_aria:"Chapters per day (1-100)",
- fnote:"You can come back and edit your pace anytime.",fixL:"You can auto-adjust your settings.",fixA:">  Keep my reading plan, update the target date.",fixB:">  Keep my target date, adjust the reading plan.",fixR:"Return",vprev:"Previous verse",vmark:"Mark as read",
+ fnote:"You can come back and edit your pace anytime.",cal_hint:"On days you read, tap the date. Today's verse opens, and tapping the cross circles that day.",fixL:"You can auto-adjust your settings.",fixA:">  Keep my reading plan, update the target date.",fixB:">  Keep my target date, adjust the reading plan.",fixR:"Return",vprev:"Previous verse",vmark:"Mark as read",
  del_q:"Delete this pace?",cancel:"Cancel",del:"Delete",okb:"OK",wip:"Coming soon.",soon:"Soon",dev_on:"Developer mode on.",dev_off:"Developer mode off.",r_upd:"Check for updates",r_terms:"Terms of use",upd_wait:"Checking.",upd_new:v=>`A new version (ver ${v}) is available. Reload now?`,upd_ok:v=>`You are up to date (ver ${v}).`,upd_fail:"Please check your internet connection.",ct_t:"Contact us",ct_body:"Your mail app opens with a ready message.\nDescribe your question and send it.",ct_none:"Coming soon",ct_to:"To",ct_inc:"Included in the email",ct_open:"Open mail app",ct_copy:"Copy email address",ct_copied:"Copied",ct_close_a:"Close",ct_copy_a:"Copy",ct_l:["App version","Platform","Language","Account","Subscription"],ct_v:["Not connected","Free"],ct_sub:"Bible Reading Pace Support",
  add_tip:'💡 Only one main pace can be linked to your progress. Tap the circle (<i class="rdd"></i>) next to a name to select it, and tap again to unselect. With none selected, your progress isn\'t linked to any pace.',
  h_f:"Enter a number from 1 to 7 for days per week.",h_a:"Enter a number from 1 to 100 for chapters per day.",h_t:"Choose a target date, or tap TBD if you haven't decided yet.",
@@ -603,7 +604,7 @@ function vdSet(c){ST.vd2={ko:"KJV",en:"",...(ST.vd2||{})};ST.vd2[ST.lang]=c;try{
 document.addEventListener("click",e=>{const n=e.target.closest("#vdn [data-vd]");if(n){if(n.dataset.vd==="1")vdSet("");else if(!vdGet()){const c=VORD.find(c=>c!==PRIM[ST.lang]&&VER[c].ok()&&VER[c].l!==VER[PRIM[ST.lang]].l)||VORD.find(c=>c!==PRIM[ST.lang]&&VER[c].ok());vdSet(c||"")}return}
  const b=e.target.closest("#so-v2 [data-v2]");if(b&&!b.disabled)vdSet(b.dataset.v2)});
 function verUI(){vdUI();const L=I[ST.lang].verL,sl=VSEL[ST.lang]||0;document.getElementById("svv").textContent=L[sl][2];document.getElementById("so-v").innerHTML=L.map((v,i)=>`<button data-ver="${i}" aria-pressed="${i===sl}"${i!==sl?" disabled":""}><span class="vtl"><i class="vtb">${v[0]}</i><span>${v[1]}</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7"/></svg></button>`).join("")}
-const APPV="0.71",CONTACT="";
+const APPV="0.72",CONTACT="";
 function applyBar(){const t=Math.round(Math.min(100,Math.max(0,Number.isFinite(+ST.bt)?+ST.bt:50))/10)*10;document.documentElement.style.setProperty("--ba",(1-t/100).toFixed(2));document.documentElement.style.setProperty("--bb",Math.round(18-16*t/100)+"px");const i=document.getElementById("bat");if(i)i.value=t;document.getElementById("bav").textContent=t+"%";const l=document.getElementById("bat");if(l)l.setAttribute("aria-valuetext",t+"%")}
 document.getElementById("bat").addEventListener("input",e=>{ST.bt=+e.target.value;applyBar()});
 document.getElementById("bat").addEventListener("change",()=>{try{localStorage.setItem(SKEY,JSON.stringify(ST))}catch(x){}});
