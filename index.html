@@ -606,7 +606,7 @@ function vdSet(c){ST.vd2={ko:"KJV",en:"",...(ST.vd2||{})};ST.vd2[ST.lang]=c;try{
 document.addEventListener("click",e=>{const n=e.target.closest("#vdn [data-vd]");if(n){if(n.dataset.vd==="1")vdSet("");else if(!vdGet()){const c=VORD.find(c=>c!==PRIM[ST.lang]&&VER[c].ok()&&VER[c].l!==VER[PRIM[ST.lang]].l)||VORD.find(c=>c!==PRIM[ST.lang]&&VER[c].ok());vdSet(c||"")}return}
  const b=e.target.closest("#so-v2 [data-v2]");if(b&&!b.disabled)vdSet(b.dataset.v2)});
 function verUI(){vdUI();const L=I[ST.lang].verL,sl=VSEL[ST.lang]||0;document.getElementById("svv").textContent=L[sl][2];document.getElementById("so-v").innerHTML=L.map((v,i)=>`<button data-ver="${i}" aria-pressed="${i===sl}"${i!==sl?" disabled":""}><span class="vtl"><i class="vtb">${v[0]}</i><span>${v[1]}</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7"/></svg></button>`).join("")}
-const APPV="0.77",CONTACT="euntaestudio@gmail.com";
+const APPV="0.78",CONTACT="euntaestudio@gmail.com";
 function applyBar(){const t=Math.round(Math.min(100,Math.max(0,Number.isFinite(+ST.bt)?+ST.bt:50))/10)*10;document.documentElement.style.setProperty("--ba",(1-t/100).toFixed(2));document.documentElement.style.setProperty("--bb",Math.round(18-16*t/100)+"px");const i=document.getElementById("bat");if(i)i.value=t;document.getElementById("bav").textContent=t+"%";const l=document.getElementById("bat");if(l)l.setAttribute("aria-valuetext",t+"%")}
 document.getElementById("bat").addEventListener("input",e=>{ST.bt=+e.target.value;applyBar()});
 document.getElementById("bat").addEventListener("change",()=>{try{localStorage.setItem(SKEY,JSON.stringify(ST))}catch(x){}});
@@ -1013,6 +1013,6 @@ function bkCheck(){const tk=dKey();
  showInfo(tr("bk_t")+"<br><br>"+tr("bk_b")+"<br><br>"+tr("bk_note"),()=>document.querySelector("[data-exp]").click(),true,tr("bk_now"),tr("bk_later"),snooze("bkSnooze"))}
 applyLang();view();document.getElementById("tq").click();setTimeout(bkCheck,600);
 </script>
-<script>(function(){var t=0;document.addEventListener("touchend",function(e){var n=Date.now();if(n-t<350&&!e.target.closest("input,textarea,select"))e.preventDefault();t=n},{passive:false})})();</script><script>if("serviceWorker" in navigator&&isSecureContext){addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{})})}</script>
+<script>(function(){var t=0;document.addEventListener("touchend",function(e){var n=Date.now();if(n-t<350&&!e.target.closest("input,textarea,select,#verf"))e.preventDefault();t=n},{passive:false})})();</script><script>if("serviceWorker" in navigator&&isSecureContext){addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{})})}</script>
 </body>
 </html>
