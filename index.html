@@ -24,7 +24,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.6 "Noto Sans
 main{max-width:720px;margin:0 auto;padding:0 16px 48px}
 .tabs{display:flex;gap:6px;position:sticky;top:0;z-index:12;background:var(--bg);margin:0 -16px 10px;padding:calc(20px + env(safe-area-inset-top,0px)) 16px 4px}.tabs button{width:40px;height:40px;display:grid;place-items:center;padding:0;border:0;border-radius:12px;background:none;color:var(--mute);cursor:pointer}.tabs button[aria-selected=true]{color:var(--acc)}.tabs svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.tabs .ring{stroke-width:3.6;stroke-linecap:butt}.tabs .sq{stroke-linejoin:miter;stroke-linecap:square}.tabs .fl,.tabs .fl2{fill:none;stroke:none}.tabs button[aria-selected=true] .fl{fill:currentColor}.tabs button[aria-selected=true] .fl2{fill:currentColor;stroke:none}.tabs button[aria-selected=true] .ring{stroke-width:4}.tabs .gr path{fill:none}.tabs button[aria-selected=true] .gr path{fill:currentColor}.tabs .gc{fill:none}.tabs button[aria-selected=true] .gc{fill:var(--bg);stroke:none}.tabs button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 .sum{display:flex;gap:20px;align-items:center;background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:18px}
-.donut{position:relative;width:132px;height:132px;flex:none}
+.donut{position:relative;width:142px;height:142px;flex:none}.donut svg{width:100%;height:100%}
 .donut svg{transform:rotate(-90deg)}
 .donut circle{fill:none;stroke-width:14}
 .donut .t{stroke:var(--track)}.donut .v{stroke:var(--acc);stroke-linecap:butt;transition:stroke-dasharray .4s}
@@ -151,7 +151,7 @@ summary:focus-visible,.c:focus-visible,.all:focus-visible{outline:2px solid var(
 .tabs button{width:48px;height:44px}
 main{padding:20px 16px calc(100px + env(safe-area-inset-bottom,0px))}
 .lv1{top:env(safe-area-inset-top,0px)}details{scroll-margin-top:60px}.top{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
-.qtile{width:132px;height:132px;flex:none;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;background:var(--surf)}.qtile .qm{background:var(--acc);color:var(--on);text-align:center;font-size:15px;line-height:36px;letter-spacing:.12em;height:36px}.qtile .qdd{flex:1;display:grid;place-items:center;font:500 52px/1 "Noto Sans KR",system-ui,sans-serif;color:var(--ink);padding-top:2px}.qtile .qw{text-align:center;font-size:13px;line-height:1;color:var(--mute);padding-bottom:13px}.qtile .qw .sun{color:var(--bur)}
+.qtile{width:142px;height:142px;flex:none;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;background:var(--surf)}.qtile .qm{background:var(--acc);color:var(--on);text-align:center;font-size:15px;line-height:36px;letter-spacing:.12em;height:36px}.qtile .qdd{flex:1;display:grid;place-items:center;font:500 52px/1 "Noto Sans KR",system-ui,sans-serif;color:var(--ink);padding-top:2px}.qtile .qw{text-align:center;font-size:13px;line-height:1;color:var(--mute);padding-bottom:13px}.qtile .qw .sun{color:var(--bur)}
 .qnow .stats{position:relative}.qnow .stats .pc{margin-top:6px}.qpn{font:inherit;font-size:13px;color:inherit;background:none;border:0;padding:0;display:inline-flex;align-items:center;gap:4px;cursor:pointer}.qcv{width:12px;height:12px;color:var(--mute)}
 .qmenu{position:absolute;left:0;top:calc(100% - 4px);z-index:30;min-width:170px;background:var(--surf);border:1px solid var(--line);border-radius:12px;padding:4px;box-shadow:0 8px 24px rgba(20,30,50,.18)}.qmenu[hidden]{display:none}.qmenu button{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;border:0;background:none;color:var(--ink);font:inherit;font-size:13px;padding:8px 10px;border-radius:8px;text-align:left;cursor:pointer}.qmenu button[aria-selected=true]{color:var(--acc);font-weight:500}.qmenu svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .qpas{margin-top:8px;font:500 17px/1.35 "Noto Sans KR",system-ui,sans-serif;color:var(--ink)}
@@ -160,7 +160,7 @@ main{padding:20px 16px calc(100px + env(safe-area-inset-bottom,0px))}
 .fxc{width:13px;height:13px;margin-left:6px;vertical-align:-2px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 
 .dr .dt{width:24px}
-.qtile{width:132px;height:132px;flex:none;box-sizing:border-box;border:1px solid color-mix(in srgb,var(--acc) 18%,transparent);border-radius:20px;background:color-mix(in srgb,var(--acc) 8%,var(--surf));padding:18px 0 0 18px;display:flex;flex-direction:column;overflow:visible}
+.qtile{width:142px;height:142px;flex:none;box-sizing:border-box;border:1px solid color-mix(in srgb,var(--acc) 18%,transparent);border-radius:20px;background:color-mix(in srgb,var(--acc) 8%,var(--surf));padding:18px 0 0 18px;display:flex;flex-direction:column;overflow:visible}
 .qtile .qm{background:none;color:var(--acc);height:auto;line-height:1;text-align:left;font-size:12px;font-weight:500;letter-spacing:.16em}
 .qtile .qdd{flex:none;display:block;font:400 54px/1 "Noto Sans KR",system-ui,sans-serif;color:var(--ink);letter-spacing:-.02em;margin-top:12px;padding:0}
 .qtile .qw{margin-top:auto;padding:0 0 16px;text-align:left;font-size:12px;line-height:1;color:var(--mute);display:flex;align-items:center;gap:7px}.qtile .qw i{width:1px;height:10px;background:var(--line)}
@@ -300,7 +300,7 @@ details[id^=d]>summary .meta{font-size:12px!important;font-weight:300!important;
 .qm{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .qw{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .qw span{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
-.qmsg{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
+.qmsg{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .qy{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
 .sh{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
 .esvn{font-size:12px!important;font-weight:300!important;line-height:1.2!important;--ls:0px;letter-spacing:0px!important}
@@ -345,7 +345,7 @@ html,body,*{touch-action:manipulation}
 #vq .dr .dy{grid-column:2;grid-row:1;align-self:baseline;margin-right:14px}
 #vq .dr .pls{grid-column:2;grid-row:2;align-self:baseline;margin-right:14px}
 #vq .dr .dc{grid-column:3;grid-row:1/3;align-self:center}
-.sum.qnow{height:auto!important;min-height:170px}
+.sum.qnow{height:auto!important;min-height:180px}
 .qnow .stats .ttl,.qnow .stats.l1 .ttl{margin-top:29px}
 .sum.qnow>.qtile{align-self:flex-start;margin-top:0}
 </style>
@@ -621,7 +621,7 @@ function vdSet(c){ST.vd2={ko:"KJV",en:"",...(ST.vd2||{})};ST.vd2[ST.lang]=c;try{
 document.addEventListener("click",e=>{const n=e.target.closest("#vdn [data-vd]");if(n){if(n.dataset.vd==="1")vdSet("");else if(!vdGet()){const c=VORD.find(c=>c!==PRIM[ST.lang]&&VER[c].ok()&&VER[c].l!==VER[PRIM[ST.lang]].l)||VORD.find(c=>c!==PRIM[ST.lang]&&VER[c].ok());vdSet(c||"")}return}
  const b=e.target.closest("#so-v2 [data-v2]");if(b&&!b.disabled)vdSet(b.dataset.v2)});
 function verUI(){vdUI();const L=I[ST.lang].verL,sl=VSEL[ST.lang]||0;document.getElementById("svv").textContent=L[sl][2];document.getElementById("so-v").innerHTML=L.map((v,i)=>`<button data-ver="${i}" aria-pressed="${i===sl}"${i!==sl?" disabled":""}><span class="vtl"><i class="vtb">${v[0]}</i><span>${v[1]}</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7"/></svg></button>`).join("")}
-const APPV="0.82",CONTACT="euntaestudio@gmail.com";
+const APPV="0.83",CONTACT="euntaestudio@gmail.com";
 function applyBar(){const t=Math.round(Math.min(100,Math.max(0,Number.isFinite(+ST.bt)?+ST.bt:50))/10)*10;document.documentElement.style.setProperty("--ba",(1-t/100).toFixed(2));document.documentElement.style.setProperty("--bb",Math.round(18-16*t/100)+"px");const i=document.getElementById("bat");if(i)i.value=t;document.getElementById("bav").textContent=t+"%";const l=document.getElementById("bat");if(l)l.setAttribute("aria-valuetext",t+"%")}
 document.getElementById("bat").addEventListener("input",e=>{ST.bt=+e.target.value;applyBar()});
 document.getElementById("bat").addEventListener("change",()=>{try{localStorage.setItem(SKEY,JSON.stringify(ST))}catch(x){}});
