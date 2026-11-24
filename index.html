@@ -628,7 +628,7 @@ function vdSet(c){ST.vd2={ko:"KJV",en:"",...(ST.vd2||{})};ST.vd2[ST.lang]=c;try{
 document.addEventListener("click",e=>{const n=e.target.closest("#vdn [data-vd]");if(n){if(n.dataset.vd==="1")vdSet("");else if(!vdGet()){const c=VORD.find(c=>c!==PRIM[ST.lang]&&VER[c].ok()&&VER[c].l!==VER[PRIM[ST.lang]].l)||VORD.find(c=>c!==PRIM[ST.lang]&&VER[c].ok());vdSet(c||"")}return}
  const b=e.target.closest("#so-v2 [data-v2]");if(b&&!b.disabled)vdSet(b.dataset.v2)});
 function verUI(){vdUI();const L=I[ST.lang].verL,sl=VSEL[ST.lang]||0;document.getElementById("svv").textContent=L[sl][2];document.getElementById("so-v").innerHTML=L.map((v,i)=>`<button data-ver="${i}" aria-pressed="${i===sl}"${i!==sl?" disabled":""}><span class="vtl"><i class="vtb">${v[0]}</i><span>${v[1]}</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7"/></svg></button>`).join("")}
-const APPV="0.86",CONTACT="euntaestudio@gmail.com";
+const APPV="0.87",CONTACT="euntaestudio@gmail.com";
 function applyBar(){const t=Math.round(Math.min(100,Math.max(0,Number.isFinite(+ST.bt)?+ST.bt:50))/10)*10;document.documentElement.style.setProperty("--ba",(1-t/100).toFixed(2));document.documentElement.style.setProperty("--bb",Math.round(18-16*t/100)+"px");const i=document.getElementById("bat");if(i)i.value=t;document.getElementById("bav").textContent=t+"%";const l=document.getElementById("bat");if(l)l.setAttribute("aria-valuetext",t+"%")}
 document.getElementById("bat").addEventListener("input",e=>{ST.bt=+e.target.value;applyBar()});
 document.getElementById("bat").addEventListener("change",()=>{try{localStorage.setItem(SKEY,JSON.stringify(ST))}catch(x){}});
@@ -659,7 +659,7 @@ document.getElementById("vs").addEventListener("click",e=>{const b=e.target.clos
  else if("upd" in r.dataset)chkUpd();
  else if("ct" in r.dataset)openCt();
  else if("bkt" in r.dataset)bkPop(false,true);
- else if("priv" in r.dataset)showInfo(tr("priv_t")+"<br><br>"+tr("priv_b")+`<br><br><a href="privacy.html#${ST.lang==="en"?"en":"ko"}" target="_blank" rel="noopener">${tr("priv_full")}</a>`);
+ else if("priv" in r.dataset){const a=document.createElement("a");a.href="privacy.html#"+(ST.lang==="en"?"en":"ko");a.target="_blank";a.rel="noopener";document.body.appendChild(a);a.click();a.remove()}
  else wip.classList.add("on")});
 const EXK=["bible-tracker-v1","bible-cal-v1","bible-paces-v2","bible-settings-v1","bible-tracker-view","bible-plan-done-v1"];
 document.getElementById("impf").addEventListener("change",e=>{const f=e.target.files[0];e.target.value="";if(!f)return;const rd=new FileReader();rd.onload=()=>{let o;try{o=JSON.parse(rd.result);if(!o||typeof o!=="object")throw 0}catch(x){showInfo(tr("imp_bad"));return}
